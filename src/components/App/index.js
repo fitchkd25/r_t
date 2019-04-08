@@ -10,6 +10,7 @@ import Logout from '../Logout';
 import Navigation from '../Navigation';
 import SignUpPage from '../SignUp';
 import SignInPage from '../SignIn';
+import Feed from '../Feed';
 
 
 import * as ROUTES from '../../constants/routes';
