@@ -49,4 +49,4 @@ export default compose(
   withAuthorization(condition),
 )(HomePage);
 
-//  note note note note
+// note
