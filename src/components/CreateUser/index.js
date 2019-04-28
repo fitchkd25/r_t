@@ -13,10 +13,9 @@ class CreateUser extends React.Component {
 
   render() {
     return (
-      <div className="ExamplePopup">
+      <div>
         <ReactTypeformEmbed
-          popup
-          autoOpen={false}
+          autoOpen={true}
           url="https://kirbyjrfitch.typeform.com/to/nh3QQU"
           hideHeaders
           hideFooter
@@ -26,9 +25,6 @@ class CreateUser extends React.Component {
             this.typeformEmbed = tf;
           }}
         />
-        <button className="btn" onClick={this.openForm} style={{ cursor: 'pointer' }}>
-          Click to open the popup!
-        </button>
       </div>
     );
   }
