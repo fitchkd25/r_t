@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "private": true,
   "dependencies": {
-    "firebase": "^5.6.0",
+    "firebase": "^5.10.1",
     "lodash": "^4.17.11",
     "mason-library": "^3.2.8",
     "react": "^16.6.3",
@@ -12,6 +12,7 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.1",
     "react-sticky": "^6.0.3",
+    "react-typeform-embed": "^0.2.0",
     "recompose": "^0.30.0"
   },
   "scripts": {

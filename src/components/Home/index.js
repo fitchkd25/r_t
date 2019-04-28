@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
-import { Canvas } from 'mason-library';
 import { withAuthorization } from '../Session';
 import { withFirebase } from '../Firebase';
-import { StreamApp, NotificationDropdown, FlatFeed } from 'react-activity-feed';
+import { StreamApp, FlatFeed } from 'react-activity-feed';
 import 'react-activity-feed/dist/index.css';
 
 class HomePage extends Component {
@@ -49,4 +48,4 @@ export default compose(
   withAuthorization(condition),
 )(HomePage);
 
-// note
+// https://firestore.googleapis.com/v1/projects/roadmap-tools-release/databases/(default)/documents/vendors/VSYLoJdu0epacBDJ8t9w

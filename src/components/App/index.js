@@ -11,6 +11,7 @@ import Navigation from '../Navigation';
 import SignUpPage from '../SignUp';
 import SignInPage from '../SignIn';
 import Feed from '../Feed';
+import CreateUser from '../CreateUser';
 
 
 import * as ROUTES from '../../constants/routes';
@@ -37,6 +38,7 @@ class App extends Component {
           <Route path={ROUTES.SIGN_OUT} component={Logout} />
           <Route path={ROUTES.HOME} component={HomePage} />
           <Route path={ROUTES.ACCOUNT} component={AccountPage} />
+          <Route path={ROUTES.CREATEUSER} component={CreateUser} />
           <Footer />
         </div>
       </Router>
