@@ -8,7 +8,7 @@ import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 import * as ROLES from '../../constants/roles';
 
-class CreateUser extends Component {
+class CreateForm extends Component {
   constructor(props) {
     super(props);
     this.state = { error: null };
@@ -57,7 +57,7 @@ class CreateUser extends Component {
     return (
       <div>
         <Canvas
-          id="5cd727dc8f14a9000330a205"
+          id="5cced4096c7c2b000324b370"
           children={<span>{this.state.error}</span>}
           willSendData={(form) => {
             this.onSubmit(form.data)
@@ -72,4 +72,4 @@ class CreateUser extends Component {
 export default compose(
   withRouter,
   withFirebase,
-)(CreateUser);
+)(CreateForm);

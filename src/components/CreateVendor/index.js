@@ -8,7 +8,7 @@ import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 import * as ROLES from '../../constants/roles';
 
-class CreateUser extends Component {
+class CreateVendor extends Component {
   constructor(props) {
     super(props);
     this.state = { error: null };
@@ -16,7 +16,18 @@ class CreateUser extends Component {
   }
 
   onSubmit(data) {
-    this.props.firebase
+    
+    
+    var data = {
+        name: 'Los Angeles',
+        state: 'CA',
+        country: 'USA'
+      };
+      
+      // Add a new document in collection "cities" with ID 'LA'
+      var setDoc = db.collection('cities').doc('LA').set(data);
+
+
     .doCreateUserWithEmailAndPassword(data.email, data.password)
     .then(authUser => {
       const userDomain = data.email.match(/@(\w+)/)[1];
@@ -57,7 +68,7 @@ class CreateUser extends Component {
     return (
       <div>
         <Canvas
-          id="5cd727dc8f14a9000330a205"
+          id="5cd381d7ed24bd00030718e1"
           children={<span>{this.state.error}</span>}
           willSendData={(form) => {
             this.onSubmit(form.data)
@@ -72,4 +83,4 @@ class CreateUser extends Component {
 export default compose(
   withRouter,
   withFirebase,
-)(CreateUser);
+)(CreateVendor);

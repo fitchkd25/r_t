@@ -10,8 +10,16 @@ import Logout from '../Logout';
 import Navigation from '../Navigation';
 import SignUpPage from '../SignUp';
 import SignInPage from '../SignIn';
-import Feed from '../Feed';
+import CreateVendor from '../CreateVendor';
+import CreateProduct from '../CreateProduct';
+import CreateOrganization from '../CreateOrganization';
+import CreateForm from '../CreateForm';
+import CreateField from '../CreateField';
 import CreateUser from '../CreateUser';
+import Feed from '../Feed';
+
+
+
 
 
 import * as ROUTES from '../../constants/routes';
@@ -38,7 +46,12 @@ class App extends Component {
           <Route path={ROUTES.SIGN_OUT} component={Logout} />
           <Route path={ROUTES.HOME} component={HomePage} />
           <Route path={ROUTES.ACCOUNT} component={AccountPage} />
-          <Route path={ROUTES.CREATEUSER} component={CreateUser} />
+          <Route path={ROUTES.CREATE_USER} component={CreateUser} />
+          <Route path={ROUTES.CREATE_VENDOR} component={CreateVendor} />
+          <Route path={ROUTES.CREATE_PRODUCT} component={CreateProduct} />
+          <Route path={ROUTES.CREATE_ORGANIZATION} component={CreateOrganization} />
+          <Route path={ROUTES.CREATE_FORM} component={CreateForm} />
+          <Route path={ROUTES.CREATE_FIELD} component={CreateField} />
           <Footer />
         </div>
       </Router>
