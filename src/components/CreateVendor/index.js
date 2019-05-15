@@ -24,10 +24,12 @@ class CreateVendor extends Component {
         country: 'USA'
       };
       
-      // Add a new document in collection "cities" with ID 'LA'
-      var setDoc = db.collection('cities').doc('LA').set(data);
+    // Add a new document in collection "cities" with ID 'LA'
+    // TODO: db collection throws an error while building the app, the bug should be fixed
+    //var setDoc = db.collection('cities').doc('LA').set(data);
 
-
+    // Added missed firebase props line to fix compile error while building the app
+    this.props.firebase
     .doCreateUserWithEmailAndPassword(data.email, data.password)
     .then(authUser => {
       const userDomain = data.email.match(/@(\w+)/)[1];
