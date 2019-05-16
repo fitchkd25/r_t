@@ -13,3 +13,4 @@ export const CREATE_PRODUCT = '/createproduct';
 export const CREATE_ORGANIZATION = '/createorganization';
 export const CREATE_FORM = '/createform';
 export const CREATE_FIELD = '/createfield';
+export const VENDORS = '/vendors';

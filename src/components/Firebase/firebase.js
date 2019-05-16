@@ -1,6 +1,7 @@
 import app from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
+import 'firebase/firestore';
 
 const config = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -22,6 +23,7 @@ class Firebase {
 
     this.auth = app.auth();
     this.db = app.database();
+    this.fs = app.firestore();
   }
 
   // *** Auth API ***
@@ -79,6 +81,9 @@ class Firebase {
   domain = uid => this.db.ref(`domains/${uid}`);
 
   domains = () => this.db.ref('domains');
+
+  // *** Vendors API ***
+  doCreateVendor = (data) => this.fs.collection('vendors').add(data);
 
 }
 
