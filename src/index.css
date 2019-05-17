@@ -20,3 +20,24 @@ code {
   padding-left: 15px;
   padding-right: 15px;
 }
+
+.vendors-page{
+  max-width: 1400px;
+  margin: auto auto 100px;
+}
+.react-grid-HeaderRow {
+  overflow-x: inherit;
+}
+
+.react-grid-Canvas{
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+.react-grid-Cell{
+  border-bottom: none !important;
+}
+
+.react-grid-HeaderRow{
+  overflow-x: inherit !important;
+}
