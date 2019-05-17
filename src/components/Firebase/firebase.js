@@ -85,6 +85,8 @@ class Firebase {
   // *** Vendors API ***
   doCreateVendor = (data) => this.fs.collection('vendors').add(data);
 
+  vendors = () => this.fs.collection('vendors').get();
+
 }
 
 export default Firebase;
