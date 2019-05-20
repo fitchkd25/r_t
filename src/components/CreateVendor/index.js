@@ -16,18 +16,7 @@ class CreateVendor extends Component {
   }
 
   onSubmit(data) {
-    
-    
-    var data = {
-        name: 'Los Angeles',
-        state: 'CA',
-        country: 'USA'
-      };
-      
-      // Add a new document in collection "cities" with ID 'LA'
-      var setDoc = db.collection('cities').doc('LA').set(data);
-
-
+    this.props.firebase
     .doCreateUserWithEmailAndPassword(data.email, data.password)
     .then(authUser => {
       const userDomain = data.email.match(/@(\w+)/)[1];
@@ -68,7 +57,7 @@ class CreateVendor extends Component {
     return (
       <div>
         <Canvas
-          id="5cd381d7ed24bd00030718e1"
+          id="5cd38234ed24bd00030718ed"
           children={<span>{this.state.error}</span>}
           willSendData={(form) => {
             this.onSubmit(form.data)
