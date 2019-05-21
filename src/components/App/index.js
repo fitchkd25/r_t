@@ -16,6 +16,7 @@ import CreateOrganization from '../CreateOrganization';
 import CreateForm from '../CreateForm';
 import CreateField from '../CreateField';
 import CreateUser from '../CreateUser';
+import Vendors from '../Vendors';
 import Feed from '../Feed';
 
 
@@ -52,6 +53,7 @@ class App extends Component {
           <Route path={ROUTES.CREATE_ORGANIZATION} component={CreateOrganization} />
           <Route path={ROUTES.CREATE_FORM} component={CreateForm} />
           <Route path={ROUTES.CREATE_FIELD} component={CreateField} />
+          <Route path={ROUTES.VENDORS} component={Vendors} />
           <Footer />
         </div>
       </Router>

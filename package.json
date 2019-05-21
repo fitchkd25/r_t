@@ -9,6 +9,7 @@
     "mason-library": "^3.2.8",
     "react": "^16.6.3",
     "react-activity-feed": "^0.9.4",
+    "react-data-grid": "^6.1.0",
     "react-dom": "^16.6.3",
     "react-router-dom": "^4.3.1",
     "react-scripts": "^2.1.1",
