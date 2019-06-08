@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
-import { Canvas } from 'mason-library';
+import { Canvas } from '@mason-api/react-sdk';
 import { compose } from 'recompose';
 import {
   AuthUserContext,

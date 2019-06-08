@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
 
-import { Canvas } from 'mason-library';
+import { Canvas } from '@mason-api/react-sdk';
 
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';

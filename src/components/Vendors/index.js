@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
-import { Canvas } from 'mason-library';
+import { Canvas } from '@mason-api/react-sdk';
 import ReactDataGrid from 'react-data-grid';
 
 import { withFirebase } from '../Firebase';

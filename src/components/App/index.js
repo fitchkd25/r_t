@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Mason from 'mason-library';
+import Mason from '@mason-api/react-sdk';
 
 import AccountPage from '../Account';
 import Footer from '../Footer';
@@ -17,7 +17,6 @@ import CreateForm from '../CreateForm';
 import CreateField from '../CreateField';
 import CreateUser from '../CreateUser';
 import Vendors from '../Vendors';
-import Feed from '../Feed';
 
 
 

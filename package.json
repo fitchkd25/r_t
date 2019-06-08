@@ -3,10 +3,10 @@
   "version": "0.2.0",
   "private": true,
   "dependencies": {
+    "@mason-api/react-sdk": "^3.4.0",
     "build": "^0.1.4",
     "firebase": "^5.10.1",
     "lodash": "^4.17.11",
-    "mason-library": "^3.2.8",
     "react": "^16.6.3",
     "react-activity-feed": "^0.9.4",
     "react-data-grid": "^6.1.0",

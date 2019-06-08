@@ -1,5 +1,5 @@
 import React from 'react';
-import { Canvas } from 'mason-library';
+import { Canvas } from '@mason-api/react-sdk';
 
 const Landing = () => (
   <div className="default-page">
