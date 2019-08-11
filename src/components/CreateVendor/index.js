@@ -18,8 +18,8 @@ class CreateVendor extends Component {
     let vendorRequestData = {
       name : data.vendorName
     };
-    if(data.vendorNotes) {
-      vendorRequestData.notes = data.vendorNotes;
+    if(data.notes == null) {
+      data.notes = '';
     }
     this.props.firebase
       .doCreateVendor(vendorRequestData)
