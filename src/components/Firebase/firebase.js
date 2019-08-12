@@ -9,6 +9,8 @@ const config = {
   databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
   projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
   streamSecret: process.env.REACT_APP_STREAM_SECRET_ID,
+  masonKey: process.env.REACT_APP_MASON_API_KEY,
+  masonProject: process.env.REACT_APP_MASON_PROJECT_ID
 };
 
 class Firebase {
@@ -82,12 +84,12 @@ class Firebase {
 
   domains = () => this.db.ref('domains');
 
-  // *** Vendors API ***
-  doCreateVendor = (data) => this.fs.collection('vendors').add(data);
+  // *** CallLogs API ***
+  doCreateCallLog = (data) => this.fs.collection('callLogs').add(data);
 
-  doUpdateVendor = (data) => this.fs.collection('vendors').doc(data.id).update(data);
+  doUpdateCallLog = (data) => this.fs.collection('callLogs').doc(data.id).update(data);
 
-  vendors = () => this.fs.collection('vendors').get();
+  callLogs = () => this.fs.collection('callLogs').get();
 
 }
 

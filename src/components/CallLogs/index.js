@@ -1,37 +1,38 @@
-import React, { Component, useState } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
 import { Canvas } from '@mason-api/react-sdk';
 import ReactDataGrid from 'react-data-grid';
 
 import { withFirebase } from '../Firebase';
 
-class Vendors extends Component {
+class CallLogs extends Component {
 
-  constructor(props) {
+    constructor(props) {
     super(props);
     this.state = {
       isLoading: true,
       columns: [
-        { key: 'id', name: 'Id', sortable: false, resizable: true },
-        { key: 'name', name: 'Vendor Name', sortable: true, editable: true, resizable: true },
-        { key: 'notes', name: 'Vendor Notes', editable: true, resizable: true }
+        { key: 'objective', name: 'Objective', sortable: true, editable: true, resizable: true },
+        { key: 'customer', name: 'Customer', sortable: true, editable: true, resizable: true },
+        { key: 'takeaways', name: 'Key take-aways', editable: true }
       ],
       rows: []
     }
-  }
+    }
 
   componentDidMount() {
 
     this.props.firebase
-      .vendors()
+      .callLogs()
       .then((querySnapshot) => {
         let rows = [];
         querySnapshot.forEach(function (doc) {
           rows.push({
             id: doc.id,
-            name: doc.data().name,
-            notes: doc.data().notes,
+            objective: doc.data().objective,
+            customer: doc.data().customer,
+            takeaways: doc.data().takeaways,
           });
         });
         this.setState({
@@ -49,7 +50,7 @@ class Vendors extends Component {
   
   render() {
     return !this.state.isLoading ? (
-      <div className="vendors-page">
+      <div className="callLogs-page">
         <Canvas
           id="5cde7bfd22117d000396d8bd"
         />
@@ -65,7 +66,6 @@ class Vendors extends Component {
           onGridSort={(sortColumn, sortDirection) =>
             this.sortRows(this.state.rows, sortColumn, sortDirection)
           }
-          onColumnResize={null}
         />
       </div>
     ) : '';
@@ -140,11 +140,8 @@ class Vendors extends Component {
 
   updateRow(data)
   {
-    if(data.notes == null) {
-      data.notes = '';
-    }
     this.props.firebase
-      .doUpdateVendor(data)
+      .doUpdateCallLog(data)
       .catch(error => {
         this.setState({ error: error.message })
       });
@@ -156,4 +153,4 @@ class Vendors extends Component {
 export default compose(
   withRouter,
   withFirebase,
-)(Vendors);
+)(CallLogs);

@@ -6,7 +6,7 @@ import { Canvas } from '@mason-api/react-sdk';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 
-class CreateVendor extends Component {
+class CreateCallLog extends Component {
   constructor(props) {
     super(props);
     this.state = { error: null };
@@ -14,17 +14,18 @@ class CreateVendor extends Component {
   }
 
   onSubmit(data) {
-
-    let vendorRequestData = {
-      name : data.vendorName
-    };
-    if(data.notes == null) {
-      data.notes = '';
+    if (data.takeaways == null) {
+      data.takeaways = '';
+    }
+    let callLogRequestData = {
+      objective : data.objective,
+      customer : data.customer,
+      takeaways : data.takeaways
     }
     this.props.firebase
-      .doCreateVendor(vendorRequestData)
+      .doCreateCallLog(callLogRequestData)
       .then(() => {
-        this.props.history.push(ROUTES.VENDORS);
+        this.props.history.push(ROUTES.CALL_LOGS);
       })
       .catch(error => {
         this.setState({ error: error.message })
@@ -51,4 +52,4 @@ class CreateVendor extends Component {
 export default compose(
   withRouter,
   withFirebase,
-)(CreateVendor);
+)(CreateCallLog);
