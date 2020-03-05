@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import { Canvas } from '@mason-api/react-sdk';
 import { AuthUserContext } from '../Session';
+import { Button, FormControl, Nav, Navbar, Form } from 'react-bootstrap';
 
 
 class Navigation extends Component {
@@ -12,7 +12,18 @@ class Navigation extends Component {
             authUser ? (
               <div><NavLoggedIn state={this} /></div>
              ) : (
-              <div><NavLoggedOut state={this} /></div>
+              <Navbar bg="light" variant="light">
+              <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+              <Nav className="mr-auto">
+                <Nav.Link href="/home">Home</Nav.Link>
+                <Nav.Link href="#features">Features</Nav.Link>
+                <Nav.Link href="#pricing">Pricing</Nav.Link>
+              </Nav>
+              <Form inline>
+                <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                <Button variant="outline-primary">Search</Button>
+              </Form>
+            </Navbar>
       )
     }
       </AuthUserContext.Consumer>
@@ -20,27 +31,12 @@ class Navigation extends Component {
   }
 }
 
-const NavLoggedIn = ({state}) => (<Canvas
-  id="5ca92a96f1e3fc000332dc7f"
-  eventHandlers={{
-    onClick: (e) => {
-      if (e.target.tagName === 'A') {
-        e.preventDefault();
-        state.props.history.push(e.target.getAttribute('href'));
-      }
-    }
- }} 
- />);
-const NavLoggedOut = ({state}) => (<Canvas
-  id="5c90592d6c1eab0003862eae"
-  eventHandlers={{
-    onClick: (e) => {
-      if (e.target.tagName === 'A') {
-        e.preventDefault();
-        state.props.history.push(e.target.getAttribute('href'));
-      }
-    }
- }} 
- />);
+const NavLoggedIn = ({state}) => ('nav in')
+
+const NavLoggedOut = ({state}) => (<iframe width="800" height="600" src="https://app.powerbi.com/view?r=eyJrIjoiNWMxMjYzNmUtNzdjOC00OWIwLWFkMjAtYjY0ZDE1ODdjY2NiIiwidCI6IjZmZjJmMjc5LTc4ZWYtNDE4Ni04Y2NlLTg2ZWZkZTVlNjRkZCJ9" frameborder="0" allowFullScreen="true"></iframe>)
+
+
+
+
 
 export default withRouter(Navigation);

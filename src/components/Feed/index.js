@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
-import { Canvas } from '@mason-api/react-sdk';
 import { compose } from 'recompose';
 import {
   AuthUserContext,
@@ -14,26 +13,7 @@ class Account extends Component {
     return (
       <AuthUserContext.Consumer>
         {authUser => (
-          <div>
-            <Canvas
-              willFetchData={(form) => {
-                if (form.name === 'Current User Profile') {
-                  const newURL = _.replace(form.url, ':currentUserId', authUser.uid);
-                  return {
-                    ...form,
-                    url: newURL
-                  }
-                }
-                if (form.name === 'Current User Domain') {
-                  const newURL = _.replace(form.url, ':currentDomain', authUser.domain);
-                  return {
-                    ...form,
-                    url: newURL
-                  }
-                }
-              }}
-              id="5c9d20cb1df9830003f1d149" /> {/* User profile card */}
-          </div>
+   'user'
         )}
       </AuthUserContext.Consumer>
     )

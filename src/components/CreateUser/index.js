@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
-import { Canvas } from '@mason-api/react-sdk';
 import _ from 'lodash';
 
 import { withFirebase } from '../Firebase';
@@ -54,18 +53,7 @@ class CreateUser extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <Canvas
-          id="5cd727dc8f14a9000330a205"
-          children={<span>{this.state.error}</span>}
-          willSendData={(form) => {
-            this.onSubmit(form.data)
-            return false; // Don't actually submit the form
-          }}
-        />
-      </div>
-    );
+    return('createuser');
   }
 }
 

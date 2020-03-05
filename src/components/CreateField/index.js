@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
-import { Canvas } from '@mason-api/react-sdk';
 import _ from 'lodash';
 
 import { withFirebase } from '../Firebase';
@@ -54,18 +53,7 @@ class CreateField extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <Canvas
-          id="5ccee0c06c7c2b000324b7d2"
-          children={<span>{this.state.error}</span>}
-          willSendData={(form) => {
-            this.onSubmit(form.data)
-            return false; // Don't actually submit the form
-          }}
-        />
-      </div>
-    );
+    return('createfield')
   }
 }
 

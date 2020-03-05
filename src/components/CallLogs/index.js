@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
-import { Canvas } from '@mason-api/react-sdk';
 import ReactDataGrid from 'react-data-grid';
 
 import { withFirebase } from '../Firebase';
@@ -51,9 +50,6 @@ class CallLogs extends Component {
   render() {
     return !this.state.isLoading ? (
       <div className="callLogs-page">
-        <Canvas
-          id="5cde7bfd22117d000396d8bd"
-        />
         <ReactDataGrid
           columns={this.state.columns}
           rowGetter={i => this.state.rows[i]}

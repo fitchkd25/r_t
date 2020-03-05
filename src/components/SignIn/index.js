@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
-
-import { Canvas } from '@mason-api/react-sdk';
-
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 
@@ -24,18 +21,7 @@ class SignIn extends Component {
   };
 
   render() {
-    return (
-      <div>
-        <Canvas
-          id="5cab324147fe490003907e8b"
-          children={<span>{this.state.error}</span>}
-          willSendData={(form) => {
-            this.onSubmit(form.data);
-            return false; // Don't actually submit the form
-          }}
-        />
-      </div>
-    );
+    return('signin');
   }
 }
 

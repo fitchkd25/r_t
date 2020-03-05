@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Mason from '@mason-api/react-sdk';
 
 import AccountPage from '../Account';
 import Footer from '../Footer';
@@ -29,10 +28,11 @@ import { app } from 'firebase';
 
 class App extends Component {
   componentDidMount() {
-    Mason({
+    
+    /*Mason({
       apiKey: 'FGvtU/I0YKolZPi6LSOAOv2TZAN1GEHV4NuJWjgrzFQ=',
       projectId: '5c9037846c1eab0003862bd6'
-    });
+    });*/
   }
   // Lb9N/3VwCpKIjIyHnrc4efAJPHjXCO1SmUnhyoZCrU4=
   // 5c9037846c1eab0003862bd6

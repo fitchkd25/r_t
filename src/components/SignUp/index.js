@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
-import { Canvas } from '@mason-api/react-sdk';
 import _ from 'lodash';
 
 import { withFirebase } from '../Firebase';
@@ -73,18 +72,7 @@ class Signup extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <Canvas
-          id="5c981f96581fdf00032c8ef9"
-          children={<span>{this.state.error}</span>}
-          willSendData={(form) => {
-            this.onSubmit(form.data)
-            return false; // Don't actually submit the form
-          }}
-        />
-      </div>
-    );
+    return('signup');
   }
 }
 

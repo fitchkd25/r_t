@@ -9,8 +9,6 @@ const config = {
   databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
   projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
   streamSecret: process.env.REACT_APP_STREAM_SECRET_ID,
-  masonKey: process.env.REACT_APP_MASON_API_KEY,
-  masonProject: process.env.REACT_APP_MASON_PROJECT_ID
 };
 
 class Firebase {
